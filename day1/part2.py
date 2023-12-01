@@ -6,7 +6,7 @@ numStrings = ['','one','two','three','four','five','six','seven','eight','nine']
 def findNumbers(line):
     numbers = []
     for j in range(len(line)):
-        if line[j] in ['1','2','3','4','5','6','7','8','9','0']:
+        if re.search(r'\d',line[j]):
             numbers.append(line[j])
             continue
         for i in range(1, len(numStrings)):
