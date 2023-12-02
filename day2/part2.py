@@ -1,3 +1,4 @@
+import math
 
 def main():
     with open('input.txt') as f:
@@ -17,7 +18,7 @@ def main():
                 if color not in minColors:
                     minColors[color] = 0
                 minColors[color] = max(minColors[color], diceRolled)
-        productSum += minColors['blue']*minColors['red']*minColors['green']
+        productSum += math.prod(minColors.values())
 
     print(productSum)
     
