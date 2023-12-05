@@ -22,14 +22,8 @@ class Mapping():
         self.upperBound = self.lowerBound + int(values[2])
         self.difference = self.lowerBound - int(values[0])
 
-    def __str__(self):
-        return str((self.lowerBound, self.upperBound, self.difference))
-
     def __lt__(self, other):
         return self.lowerBound < other.lowerBound
-
-    def __gt__(self, other):
-        return self.lowerBound > other.lowerBound
 
     def convertNumber(self, num):
         if num >= self.lowerBound and num < self.upperBound:
@@ -45,12 +39,6 @@ class Range():
 
     def __lt__(self, other):
         return self.lowerBound < other.lowerBound
-
-    def __gt__(self, other):
-        return self.lowerBound > other.lowerBound
-
-    def __str__(self):
-        return str((self.lowerBound, self.size))
 
 def main():
     with open('input.txt') as f:
