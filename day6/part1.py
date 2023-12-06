@@ -1,7 +1,7 @@
 import time,re, math
 
 def main():
-    with open('testInput.txt') as f:
+    with open('input.txt') as f:
         lines = f.readlines()
 
 
@@ -11,7 +11,7 @@ def main():
     for i in range(len(times)):
         time = int(times[i])
         distance = int(distances[i])
-        for j in range(time):
+        for j in range(distance//time,time):
             if (j * (time-j)) > distance:
                 possibleWins.append(time-2*j+1)
                 break
