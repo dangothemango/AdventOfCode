@@ -22,4 +22,4 @@ if __name__ == '__main__':
     answer = main()
     y = time.perf_counter_ns()
     print('Answer:', answer)
-    print('Time (ms):', (y-x)/1000)
+    print('Time (ms):', (y-x)/1000000)
