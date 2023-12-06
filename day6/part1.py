@@ -12,12 +12,9 @@ def main():
         time = int(times[i])
         distance = int(distances[i])
         guess = math.ceil(distance/time)
-        print(guess)
         while guess * (time-guess) <= distance:
             guess = math.ceil(distance/(time-guess))
-            print(guess)
         possibleWins.append(time-2*guess+1)
-        print('------')
     return math.prod(possibleWins)
 
 if __name__ == '__main__':
