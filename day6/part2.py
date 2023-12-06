@@ -13,10 +13,14 @@ def main():
     for i in range(len(times)):
         time = int(times[i])
         distance = int(distances[i])
-        for j in range(distance//time,time):
-            if (j * (time-j)) > distance:
-                possibleWins.append(time-2*j+1)
-                break
+        guess = math.ceil(distance/time)
+        print(guess)
+        while guess * (time-guess) <= distance:
+            guess = math.ceil(distance/(time-guess))
+            print(guess)
+        possibleWins.append(time-2*guess+1)
+        print('------')
+            
     return math.prod(possibleWins)
 
 if __name__ == '__main__':
