@@ -18,17 +18,16 @@ class Hand():
         if 'J' in counts and len(counts) > 1:
             maxCount=-1
             maxIndex=''
+            jCount = counts['J']
+            del counts['J']
             for n in counts:
-                if n == 'J':
-                    continue
                 if counts[n] > maxCount:
                     maxCount=counts[n]
                     maxIndex=n
-            counts[maxIndex]= maxCount+counts['J']
-            counts['J'] = 0
+            counts[maxIndex]= maxCount+jCount
         self.value = 0
         for n in counts:
-            self.value += 0 if counts[n] == 0 else counts[n]**counts[n]
+            self.value += counts[n]**counts[n]
 
     def __lt__(self, other):
         if self.value < other.value:
