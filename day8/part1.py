@@ -13,9 +13,7 @@ def main():
 
     steps = 0
     node = 'AAA'
-    while steps < 17000*2:
-        if (node == 'ZZZ'):
-            print(node, steps)
+    while node != 'ZZZ':
         direction = int(directions[steps%len(directions)])
         node = nodes[node][direction]
         steps += 1
