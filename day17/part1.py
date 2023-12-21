@@ -1,4 +1,4 @@
-import time, math, sys
+import time
 from queue import PriorityQueue
 
 directions = {
@@ -43,11 +43,7 @@ def main():
             visited[pointStr][dirStr] = heat
             searchQueue.put((heat, newPoint, dir, newDirs, dirStr))
 
-
-    #print(visited)
-    print(visited[str((len(lines)-1,len(lines)-1))])
     return min(visited[str((len(lines)-1,len(lines)-1))].values())
-    return minDist
 
 if __name__ == '__main__':
     x = time.perf_counter_ns()
