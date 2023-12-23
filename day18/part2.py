@@ -1,10 +1,10 @@
 import time
 
 directions = {
-    'U': (-1,0),
-    'R': (0,1),
-    'D': (1,0),
-    'L': (0,-1),
+    '3': (-1,0),
+    '0': (0,1),
+    '1': (1,0),
+    '2': (0,-1),
 }
 
 def main():
@@ -16,8 +16,9 @@ def main():
     for line in lines:
         data = line.strip(')\n').split(' (')
         drillCommand = data[0]
-        color = data[1]
-        dir, distance = drillCommand.split(' ')
+        color = data[1].strip('#')
+        dir = color[-1]
+        distance = int(color[:5],16)
         for i in range(int(distance)):
             location = (location[0]+directions[dir][0], location[1]+directions[dir][1])
             if location[0] < 0:
