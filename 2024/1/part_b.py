@@ -1,4 +1,5 @@
-import time, aocd, re
+import time, re
+from aocd import data, submit
 
 EXAMPLE_DATA='''3   4
 4   3
@@ -7,9 +8,6 @@ EXAMPLE_DATA='''3   4
 3   9
 3   3'''
 EXAMPLE_ANSWER=31
-
-def get_data():
-    return aocd.get_data()
 
 def main(data):
     A,B=list(),dict()
@@ -29,10 +27,9 @@ def main(data):
 
 if __name__ == '__main__':
     assert main(EXAMPLE_DATA) == EXAMPLE_ANSWER
-    data = get_data()
     x = time.perf_counter_ns()
     answer = main(data)
     y = time.perf_counter_ns()
     print('Answer:', answer)
     print('Time (ms):', (y-x)/1000000)
-    aocd.submit(answer)
+    submit(answer)
