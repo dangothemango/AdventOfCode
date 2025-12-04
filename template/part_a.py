@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import time, re
 from aocd import data, submit
 
@@ -13,7 +14,9 @@ def main(data):
     return None
 
 if __name__ == '__main__':
-    assert main(EXAMPLE_DATA) == EXAMPLE_ANSWER
+    ex_answer=main(EXAMPLE_DATA)
+    print('Example Answer:', ex_answer)
+    assert ex_answer == EXAMPLE_ANSWER
     x = time.perf_counter_ns()
     answer = main(data)
     y = time.perf_counter_ns()
